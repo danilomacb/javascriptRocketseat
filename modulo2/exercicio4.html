@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercício 4</title>
+</head>
+<body>
+    <input type="text" name="nome">
+    <button onClick="adicionar()">Adicionar</button>
+
+    <script>
+        var nomes = ["Diego", "Gabriel", "Lucas"];
+
+        var lista = document.createElement("ul");
+        document.querySelector("body").appendChild(lista);  
+
+        for(i = 0; i < nomes.length; i++) {
+            var item = document.createElement("li");
+            var nome = document.createTextNode(nomes[i]);
+            item.appendChild(nome);
+            document.querySelector("ul").appendChild(item);
+        }
+
+        function adicionar() {
+            var item = document.createElement("li");
+            var input = document.querySelector("input").value;
+            var nome = document.createTextNode(input);
+            item.appendChild(nome);
+            document.querySelector("ul").appendChild(item);
+            document.querySelector("input").value = "";
+        }
+    </script>
+</body>
+</html>
